@@ -1,0 +1,15 @@
+Help: Generate Files
+
+Extract your ComputerCraft.jar file using a tool such as WinRar or 7Zip. It does not matter where.
+
+Next, set the Input Directory to PATH_TO_UNZIPPED_JAR/assets/computercraft/lua/rom/help
+Set the output directory to whatever you want.
+
+Click 'Start' to start! It's that simple!
+
+Note: To edit the template used to generate the files, edit the /main/resources/template file in this jar.
+
+About:
+Created by @InternetUnexplorer for @Viluon's LuaExtended.
+
+:)

@@ -95,3 +95,65 @@
 .control-button:pressed {
 	-fx-background-color: rgb(35, 35, 35);
 }
+
+.scroll-bar .thumb{
+    -fx-background-color: rgb(35, 35, 35);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+/* Taken from pixelduke.wordpress.com */
+.scroll-bar .thumb:hover {
+    -fx-color: #cacaca;
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-color: #1e1e1e;
+}
+
+.scroll-bar .track {
+     -fx-background-color: rgb(25, 25, 25);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+.scroll-bar .track-background {
+     -fx-background-color: rgb(25, 25, 25);
+    -fx-background-insets: 0;
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: rgb(35, 35, 35);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 0.25em; /* 3 */
+}
+
+.scroll-bar .increment-button:hover, .scroll-bar .decrement-button:hover  {
+    -fx-background-color: rgb(25, 25, 25);
+}
+
+.scroll-bar .increment-button:pressed, .scroll-bar .decrement-button:pressed {
+    -fx-background-color: rgb(35, 35, 35), rgb(35, 35, 35);
+}
+
+.scroll-bar:vertical .increment-arrow {
+    -fx-background-color: rgb(35, 35, 35), rgb(35, 35, 35);
+    -fx-background-insets: 0, 0;
+    -fx-padding: 0.333333em 0.5em 0.0em 0.0em;  /*4 6 0 0 */
+    -fx-shape: "M8.124,13.625l4.125-3.375v2.889l-4.125,3.86L4,13.139V10.25L8.124,13.625z";
+}
+
+.scroll-bar .increment-button:pressed .increment-arrow {
+    -fx-background-color: rgb(35, 35, 35), rgb(35, 35, 35);
+}
+
+.scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: rgb(25, 25, 25), rgb(25, 25, 25);
+    -fx-background-insets: 0, 0;
+    -fx-padding: 0.333333em 0.5em 0.0em 0.0em; /* 4 6 0 0 */
+    -fx-shape: "M4,17v-2.889l4.124-3.86l4.125,3.86V17l-4.125-3.375L4,17z";
+}
+
+.scroll-bar .decrement-button:pressed .decrement-arrow {
+    -fx-background-color: rgb(35, 35, 35), rgb(35, 35, 35);
+}

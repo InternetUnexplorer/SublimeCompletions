@@ -25,7 +25,7 @@
          <right>
             <ToolBar prefHeight="38.0" BorderPane.alignment="CENTER">
               <items>
-                <Button mnemonicParsing="false" styleClass="tool-bar-button" text="Help / About">
+                <Button mnemonicParsing="false" onAction="#showHelpAbout" styleClass="tool-bar-button" text="Help / About">
                      <padding>
                         <Insets bottom="3.0" left="6.0" right="6.0" top="3.0" />
                      </padding>

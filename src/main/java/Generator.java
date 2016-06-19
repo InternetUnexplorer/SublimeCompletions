@@ -22,6 +22,7 @@ public class Generator {
 	private final File outputFolder;
 	private final TextArea log;
 	private final ProgressBar progressBar;
+	private final String jsonTemplate = new Scanner(getClass().getResourceAsStream("/template"), "UTF-8").useDelimiter("\\A").next();
 
 	public Generator(File inputFolder, File outputFolder, TextArea log, ProgressBar progressBar) {
 		this.inputFolder = inputFolder;
@@ -42,7 +43,10 @@ public class Generator {
 				return;
 			}
 		}
-		for(File f : inputFolder.listFiles()) {
+		File[] files = inputFolder.listFiles();
+		for (int i = 0; i < files.length; i++) {
+			File f = files[i];
+			progress(i + 1, files.length + 1);
 			if(f.isDirectory()) {
 				log("Ignoring Directory: " + f.getName());
 			} else {
@@ -90,7 +94,6 @@ public class Generator {
 			return;
 		}
 		String apiName = funcs.get(0).substring(0, funcs.get(0).indexOf("."));
-		String jsonTemplate = new Scanner(getClass().getResourceAsStream("/template"), "UTF-8").useDelimiter("\\A").next();
 		StringBuilder json = new StringBuilder();
 		for (int j = 0; j < funcs.size(); j++) {
 			String func = funcs.get(j);
@@ -141,5 +144,9 @@ public class Generator {
 
 	private void log(String string) {
 		Platform.runLater(() -> log.appendText(string + "\r\n"));
+	}
+
+	private void progress(int done, int total) {
+		Platform.runLater(() -> progressBar.setProgress(total / done));
 	}
 }

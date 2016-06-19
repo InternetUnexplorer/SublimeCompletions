@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -26,6 +27,7 @@ import java.util.Properties;
  */
 public class Controller {
 	private Stage stage;
+	private Stage infoStage;
 	@FXML private BorderPane parent;
 	@FXML private ProgressBar progress;
 	@FXML private Button mainButton;
@@ -40,11 +42,16 @@ public class Controller {
 	private Properties properties;
 	private final String propFile = System.getProperty("java.io.tmpdir") + File.separator + "ST3-Completions-Generator.properties";
 
-	public Controller(Stage stage) {
+	public Controller(Stage stage, Stage infoStage) {
 		this.stage = stage;
+		this.infoStage = infoStage;
 	}
 
 	@FXML public void initialize() {
+		infoStage.initModality(Modality.APPLICATION_MODAL);
+		infoStage.setResizable(false);
+		stage.setMinHeight(300);
+		stage.setMinWidth(400);
 		initializeUI();
 		log.setText("Ready");
 		properties = new Properties();
@@ -56,7 +63,6 @@ public class Controller {
 		mainButton.setOnAction((event) -> {
 			initializeRun();
 		});
-		System.out.println(System.getProperties().toString());
 		//Fade in effect
 		GaussianBlur effect = new GaussianBlur(20);
 		parent.setEffect(effect);
@@ -132,6 +138,11 @@ public class Controller {
 					this::initializeUI
 			);
 		}).start();
+	}
+
+	@FXML private void showHelpAbout() {
+		infoStage.show();
+		infoStage.toFront();
 	}
 
 	private void setNodeVisible(Node node, boolean visible) {
