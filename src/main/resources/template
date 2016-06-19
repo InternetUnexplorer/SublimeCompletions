@@ -1,0 +1,7 @@
+//Completions for %APINAME% API
+{
+  "scope": "source.luae - string",
+  "completions": [
+	%STUFF%
+  ]
+}

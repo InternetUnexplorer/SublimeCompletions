@@ -22,11 +22,11 @@ public class Main extends Application {
 		Controller controller = new Controller(primaryStage);
 		loader.setController(controller);
 		BorderPane parent = loader.load();
-		parent.getStylesheets().add(getClass().getResource("/dark.css").toExternalForm());
+		//parent.getStylesheets().add(getClass().getResource("/dark.css").toExternalForm());
 		primaryStage.setScene(
 				new Scene(parent, 600, 400)
 		);
-		primaryStage.setTitle("Sublime Completions Editor");
+		primaryStage.setTitle("ST3 Completions Generator");
 		primaryStage.show();
 	}
 }
