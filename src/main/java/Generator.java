@@ -124,7 +124,7 @@ public class Generator {
 			String completion = argN.toString();
 			json.append("\t\t{\r\n" +
 					"\t\t\t\"trigger\": \"" + trigger + "\",\r\n" +
-					"\t\t\t\"completion\": \"" + completion + "\"\r\n" +
+					"\t\t\t\"contents\": \"" + completion + "\"\r\n" +
 					"\t\t}");
 			if(j + 1 < funcs.size()) {
 				json.append(",");
