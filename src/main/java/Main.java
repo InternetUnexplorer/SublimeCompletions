@@ -19,6 +19,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/Main.fxml"));
+		Controller controller = new Controller(primaryStage);
+		loader.setController(controller);
 		BorderPane parent = loader.load();
 		parent.getStylesheets().add(getClass().getResource("/dark.css").toExternalForm());
 		primaryStage.setScene(

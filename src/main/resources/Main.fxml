@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<BorderPane stylesheets="@dark.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="parent" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
       <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: transparent;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>
