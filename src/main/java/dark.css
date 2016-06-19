@@ -1,0 +1,45 @@
+.root{
+    -fx-font-family: "Ubuntu Mono";
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.label-title {
+	-fx-font-size: 18px;
+	-fx-fill: rgb(193, 193, 193);
+}
+
+.tool-bar {
+	-fx-background-color: rgb(25, 25, 25);
+}
+
+.tool-bar-button {
+	-fx-background-color: rgb(25, 25, 25);
+}
+
+.tool-bar-button .text {
+	-fx-fill: rgb(210, 210, 210);
+}
+
+.tool-bar-button:hover {
+	-fx-background-color: rgb(45, 45, 45);
+}
+
+.tool-bar-button:pressed {
+	-fx-background-color: rgb(35, 35, 35);
+}
+
+.text-bar {
+	-fx-background-color: rgb(25, 25, 25);
+}
+
+.list-view {
+	-fx-background-color: rgb(30, 30, 30);
+}
+
+.text-field-edit {
+	-fx-background-color: transparent;
+	-fx-border-width: 0;
+	-fx-text-inner-color: rgb(210, 210, 210);
+	-fx-font-size: 18px;
+}
