@@ -3,6 +3,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -54,6 +55,9 @@ public class Generator {
 			}
 		}
 		log("Done.");
+		try {
+			Desktop.getDesktop().open(outputFolder);
+		} catch (IOException e) {}
 	}
 	private void parseFile(File inputFile, File outDir) {
 		ArrayList<String> funcs = new ArrayList<String>();
