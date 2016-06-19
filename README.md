@@ -18,6 +18,6 @@ A simple tool that generates ST3 completions from ComputerCraft help files, made
 
 *Note: To edit the template that is used to generate the files, you can edit `/src/main/resources/template`.
 
-The variable `%STUFF` will be replaced with the content, and `%APINAME` will be replaced with the name of the API.
+The variable `%STUFF%` will be replaced with the completions, and `%APINAME%` will be replaced with the name of the API.
 
 If you find any bugs, please let me know!
