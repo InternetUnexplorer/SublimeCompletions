@@ -2,7 +2,7 @@
 
 A simple tool that generates ST3 completions from ComputerCraft help files, made for @viluon
 
-1 - Download the jar file from [here](https://www.dropbox.com/s/2w82jkniw4y4mk4/ST3_generator_v0.5.6.jar?dl=1) - *Note: You will need JRE 1.8 or later to run it*
+1 - Download the jar file from [here](https://www.dropbox.com/s/epsxnh5yrrwmftc/ST3_completions_v0.7.1.jar?dl=1) - *Note: You will need JRE 1.8 or later to run it*
 
 2 - Use a tool such as WinRar or 7Zip to extract your ComputerCraft jar to a directory of your choosing.
 
@@ -18,6 +18,6 @@ A simple tool that generates ST3 completions from ComputerCraft help files, made
 
 *Note: To edit the template that is used to generate the files, you can edit `/src/main/resources/template`.
 
-The variable `%STUFF` will be replaced with the content, and `%APINAME` will be replaced with the name of the API.
+The variable `%STUFF%` will be replaced with the completions, and `%APINAME%` will be replaced with the name of the API.
 
 If you find any bugs, please let me know!
