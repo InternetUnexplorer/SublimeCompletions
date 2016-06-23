@@ -75,7 +75,7 @@ public class Generator {
 		boolean isApi = false;
 		int offset = 0;
 		for (int i = 0; i < lines.length; i++) {
-			if (lines[i].startsWith("Functions in the ") && lines[i].endsWith("API:")) {
+			if (lines[i].startsWith("Functions in the ") && lines[i].indexOf("API") > 0) {
 				log("File appears to be API: " + inputFile.getName());
 				isApi = true;
 				offset = i;

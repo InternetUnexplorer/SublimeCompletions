@@ -1,6 +1,6 @@
 //Completions for the %APINAME% API:
 {
-  "scope": "source.luaecc - string",
-  "completions": [
-%STUFF%   ]
+	"scope": "source.luaecc - string",
+	"completions": [
+%STUFF%	]
 }
