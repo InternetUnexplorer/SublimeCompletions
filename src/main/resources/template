@@ -1,4 +1,4 @@
-//Completions for the %APINAME% API
+//Completions for the %APINAME% API:
 {
   "scope": "source.luaecc - string",
   "completions": [

@@ -104,7 +104,7 @@ public class Generator {
 			int position = func.indexOf("(") + 1;
 			String prefix = func.substring(0, position);
 			String argArea = func.substring(position, func.length() - 1);
-			String trigger = prefix.replaceAll("\\.", "_") + argArea + ")";
+			String trigger = prefix + argArea + ")";
 			String[] args = argArea.split(",");
 			StringBuilder argN = new StringBuilder();
 			argN.append(prefix);
@@ -122,10 +122,10 @@ public class Generator {
 				}
 			}
 			String completion = argN.toString();
-			json.append("\t\t{\r\n" +
-					"\t\t\t\"trigger\": \"" + trigger + "\",\r\n" +
-					"\t\t\t\"contents\": \"" + completion + "\"\r\n" +
-					"\t\t}");
+			json.append("\t\t{ " +
+					"trigger\": \"" + trigger + "\", " +
+					"contents\": \"" + completion + "\"" +
+					" }");
 			if(j + 1 < funcs.size()) {
 				json.append(",");
 			}
