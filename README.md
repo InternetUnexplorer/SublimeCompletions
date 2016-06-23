@@ -2,7 +2,7 @@
 
 A simple tool that generates ST3 completions from ComputerCraft help files, made for @viluon
 
-1 - Download the jar file from [here](https://www.dropbox.com/s/epsxnh5yrrwmftc/ST3_completions_v0.7.1.jar?dl=1) - *Note: You will need JRE 1.8 or later to run it*
+1 - Download the jar file from [here](https://www.dropbox.com/s/wif4v32fjblubcp/SublimeCompletions.jar?dl=1) - *Note: You will need JRE 1.8 or later to run it*
 
 2 - Use a tool such as WinRar or 7Zip to extract your ComputerCraft jar to a directory of your choosing.
 
