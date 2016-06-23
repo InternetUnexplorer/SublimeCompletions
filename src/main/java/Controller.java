@@ -39,7 +39,7 @@ public class Controller {
 	@FXML private BorderPane oDirP;
 
 	private Properties properties;
-	private final String propFile = System.getProperty("java.io.tmpdir") + File.separator + "ST3-Completions-Generator.properties";
+	private final String propFile = System.getProperty("java.io.tmpdir") + "ST3-Completions-Generator.properties";
 
 	public Controller(Stage stage, Stage infoStage) {
 		this.stage = stage;
@@ -56,7 +56,9 @@ public class Controller {
 		properties = new Properties();
 		try {
 			properties.load(new FileInputStream(propFile));
-		} catch (Exception e) {}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		iDirField.setText(properties.getProperty("input-directory-location", System.getProperty("user.home") + File.separator + "Documents"));
 		oDirField.setText(properties.getProperty("output-directory-location", System.getProperty("user.home") + File.separator + "Documents"));
 		mainButton.setOnAction((event) -> {
@@ -90,7 +92,6 @@ public class Controller {
 		File res = dirC.showDialog(stage);
 		if(res != null) {
 			iDirField.setText(res.getPath());
-			properties.setProperty("input-directory-location", res.getPath());
 			storeProps();
 		}
 	}
@@ -107,7 +108,6 @@ public class Controller {
 		File res = dirC.showDialog(stage);
 		if(res != null) {
 			oDirField.setText(res.getPath());
-			properties.setProperty("output-directory-location", res.getPath());
 			storeProps();
 		}
 	}
@@ -127,6 +127,7 @@ public class Controller {
 		log.setText("");
 		progress.setProgress(-1);
 		new Thread(() -> {
+			storeProps();
 			new Generator(
 					new File(iDirField.getText()),
 					new File(oDirField.getText()),
@@ -156,7 +157,12 @@ public class Controller {
 
 	private void storeProps() {
 		try {
+			System.out.println("Storing properties to " + propFile);
+			properties.setProperty("output-directory-location", oDirField.getText());
+			properties.setProperty("input-directory-location", iDirField.getText());
 			properties.store(new FileOutputStream(propFile), "Preferences for ST3-Completions-Generator");
-		} catch (IOException e) {}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
